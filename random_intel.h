@@ -8,4 +8,4 @@
 
 int rdrand16_step(uint16_t *rand);
 
-unsigned int get_random();
+unsigned int get_random();// NSLog(@"[%i]", get_random(1, 10));

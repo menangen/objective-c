@@ -7,16 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "random_intel.h"
 
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
-        NSLog(@"[%i]", get_random(1, 10));
-        
     }
     
     return 0;
