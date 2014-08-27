@@ -17,7 +17,7 @@ void memory_test() {
     char_array[MAXELEMS - 1] = 5;
     
     for (unsigned char i=0; i < MAXELEMS; i++) {
-        NSLog(@"[%i]", char_array[i]);
+        NSLog(@"[1D item: %i]", char_array[i]);
     }
     free(char_array);
     
@@ -25,21 +25,26 @@ void memory_test() {
     width = 4;
     height = 2;
     
-    unsigned char **perlin_noise;
-    perlin_noise = (unsigned char**)calloc(width, sizeof(unsigned char));
+    printf("\n");
     
-    for (unsigned char i = 0; i < width; i++)
+    unsigned char **perlin_noise;
+    perlin_noise = (unsigned char**)calloc(height, sizeof(unsigned char*));
+    
+    for (unsigned char i = 0; i < height; i++)
     {
-        perlin_noise[i] = (unsigned char*)calloc(height, sizeof(unsigned char));
+        perlin_noise[i] = (unsigned char*)calloc(width, sizeof(unsigned char));
     }
     
     perlin_noise[0][0] = 0xFF;
+    perlin_noise[0][3] = 0x0B;
     perlin_noise[1][0] = 0xFF;
+    perlin_noise[1][3] = 0x0B;
     
-    
+    unsigned char c;
     for (unsigned char i = 0; i < height; i++) {
         for (unsigned char j = 0; j < width; j++) {
-            NSLog(@"[%i]", perlin_noise[i][j]);
+            c = perlin_noise[i][j];
+            NSLog(@"[2D item is: %i (0x%02X)]", c, c);
         }
     }
    

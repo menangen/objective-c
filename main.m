@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "memory_allocation.h"
+#import "structs.h"
 
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
+        memory_test();        
     }
     
     return 0;
