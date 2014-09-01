@@ -22,3 +22,17 @@ unsigned int get_random(int min, int max) {
     //NSLog(@"[%i]", seed % 3 + 1);    
     return seed % max + min;
 }
+
+static void testing() {
+    static int random_integer;
+    static int array[5];
+    
+    for (short i = 0; i<100; i++) {
+        random_integer = get_random(0, 5);
+        array[random_integer] += 1;
+    }
+    
+    for (int i = 0; i < 5; i++) {
+        NSLog(@"%i:%i", i, array[i]);
+    }
+}

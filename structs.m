@@ -20,6 +20,26 @@ void structs() {
     test[0].A = "Hello";
     test[0].B = 12345;
     test[0].C = -7;
+    unsigned char *pointer, variable;
+    variable = 100;
+    pointer = &variable;
+    
+    
+    struct user {
+        int score;
+    };
+    
+    typedef struct {
+        int age;
+    } admin;
+    
+    struct user menangen = {10};
+    admin menan = {12};
+    
+    
+    NSLog(@"%i", menangen.score);
+    NSLog(@"%i", menan.age);
+
     
     NSMutableArray *array = [NSMutableArray arrayWithObjects: @"Menangen", @12, nil];
     
